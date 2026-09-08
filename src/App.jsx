@@ -483,8 +483,8 @@ return ( <div className="site">
           <div className="about-image">
 
             <img
-              src="/alan.jpg"
-              alt="Alan"
+              src="/photos/alan.jpg"
+              alt="alan"
             />
 
           </div>
