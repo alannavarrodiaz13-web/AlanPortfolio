@@ -812,14 +812,11 @@ padding-top: 45px;
 }
 
 .project-details h1 {
-margin-bottom: 30px;
-
-
-font-size: clamp(50px, 15vw, 85px);
-
-
+  margin-bottom: 30px;
+  font-size: clamp(50px, 15vw, 85px);
+  line-height: 1;
+  overflow: visible;
 }
-
 .story {
 font-size: 14px;
 }
