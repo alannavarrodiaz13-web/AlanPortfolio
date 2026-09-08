@@ -405,6 +405,14 @@ return ( <div className="site">
 <p className="image-note">
   Web resolution · Originals: 24 MP
 </p>
+<a
+  className="shop-button"
+  href="https://alannavarro.pic-time.com/client/serengeti"
+  target="_blank"
+  rel="noreferrer"
+>
+  BUY THIS PHOTO →
+</a>
 
       <div className="project-details">
 
