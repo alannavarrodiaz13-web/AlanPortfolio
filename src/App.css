@@ -808,15 +808,17 @@ gap: 45px;
 
 padding-top: 45px;
 
-
+.project-details > div:first-child {
+  overflow: hidden;
+}
 }
 .project-details h1 {
   margin: 0 0 30px;
   font-size: clamp(45px, 14vw, 80px);
-  line-height: 1.15;
-  overflow: hidden;
+  line-height: 1;
+  overflow: visible;
   width: 100%;
-  padding: 10px;
+  padding: 0;
 }
 .story {
 font-size: 14px;
