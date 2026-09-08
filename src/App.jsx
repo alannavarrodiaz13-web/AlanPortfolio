@@ -492,8 +492,15 @@ return ( <div className="site">
           <div className="about-text">
 
             <p>
-              I'm Alan, a photographer and visual creator based
-              in Barcelona.
+              I'm Alan, a 17-year-old student and photographer based in
+              Barcelona. I'm passionate about nature, travelling and
+              discoveringnew places, always looking for new stories and 
+              moments to capture.
+              I love creating things and exploring different forms of 
+              visual art, from photography and editing to experimenting
+              with new ideas and creative projects. For me, photography
+              is a way of documenting the world while also seeing it 
+              from my own perspective.
             </p>
 
             <p>
@@ -506,7 +513,7 @@ return ( <div className="site">
 
               <div className="equipment-item">
                 <img
-                  src="/photos/equipment/a6400.jpg"
+                  src="/photos/equipment/a6400.png"
                   alt="Sony α6400"
                 />
                 <p>Sony α6400</p>
@@ -514,7 +521,7 @@ return ( <div className="site">
 
               <div className="equipment-item">
                 <img
-                  src="/photos/equipment/lens.jpg"
+                  src="/photos/equipment/lens.png"
                   alt="Sony 55–210mm"
                 />
                 <p>55–210mm</p>
