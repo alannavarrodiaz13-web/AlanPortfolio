@@ -137,7 +137,7 @@ export const projects = [
 
   {
     id: 9,
-    title: "Safari",
+    title: "Jets",
     location: "Serengeti",
     image: "/photos/jets.jpg",
     date: "August 2026",
