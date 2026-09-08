@@ -808,9 +808,9 @@ gap: 45px;
 
 padding-top: 45px;
 
+}
 .project-details > div:first-child {
   overflow: hidden;
-}
 }
 .project-details h1 {
   margin: 0 0 30px;

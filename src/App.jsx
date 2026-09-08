@@ -92,6 +92,7 @@ window.scrollTo(0, 0);
 
 return ( <div className="site">
 
+
   {/* NAVIGATION */}
 
   <header className="navbar">
@@ -482,7 +483,7 @@ return ( <div className="site">
           <div className="about-image">
 
             <img
-              src="public/photos/alan.jpg"
+              src="public/alan.JPG"
               alt="Alan"
             />
 
