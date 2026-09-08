@@ -92,7 +92,6 @@ window.scrollTo(0, 0);
 
 return ( <div className="site">
 
-```
   {/* NAVIGATION */}
 
   <header className="navbar">
