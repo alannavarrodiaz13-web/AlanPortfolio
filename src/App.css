@@ -460,7 +460,7 @@ color: #888;
 .about-text {
 max-width: 450px;
 
-font-size: 17px;
+font-size: 15px;
 line-height: 1.7;
 }
 
@@ -936,4 +936,13 @@ min-height: 100vh;
 
 #root {
 min-height: 100vh;
+}
+img {
+  -webkit-user-drag: none;
+  user-select: none;
+}
+.image-note {
+  font-size: 11px;
+  color: #999;
+  margin: 8px 0 0 0;
 }

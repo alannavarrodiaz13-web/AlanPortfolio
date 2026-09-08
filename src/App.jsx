@@ -394,13 +394,17 @@ return ( <div className="site">
 
       <div className="project-image">
 
-        <img
-          src={selectedProject.image}
-          alt={selectedProject.title}
-        />
+  <img
+    src={selectedProject.image}
+    alt={selectedProject.title}
+    onContextMenu={(e) => e.preventDefault()}
+  />
 
-      </div>
+  <p className="image-note">
+    Web resolution · Originals: 24 MP
+  </p>
 
+</div>
 
       <div className="project-details">
 
