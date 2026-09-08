@@ -392,7 +392,7 @@ return ( <div className="site">
         → BACK TO PROJECT
       </button>
 
-      <div className="project-image">
+<div className="project-image">
 
   <img
     src={selectedProject.image}
@@ -400,11 +400,11 @@ return ( <div className="site">
     onContextMenu={(e) => e.preventDefault()}
   />
 
-  <p className="image-note">
-    Web resolution · Originals: 24 MP
-  </p>
-
 </div>
+
+<p className="image-note">
+  Web resolution · Originals: 24 MP
+</p>
 
       <div className="project-details">
 

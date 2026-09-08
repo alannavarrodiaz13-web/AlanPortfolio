@@ -942,12 +942,9 @@ img {
   user-select: none;
 }
 .image-note {
-  display: block;
   width: 100%;
-  margin: 8px 0 0 0;
+  text-align: right;
   font-size: 11px;
   color: #999;
-}
-.project-image {
-  display: block;
+  margin: 8px 0 0 0;
 }
