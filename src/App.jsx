@@ -1,15 +1,21 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { projects } from "./data";
 import "./App.css";
 
 function App() {
-  const [page, setPage] = useState("home");
-  const [selectedProject, setSelectedProject] = useState(null);
-  const [selectedLocation, setSelectedLocation] = useState(null);
-  const [worksOpen, setWorksOpen] = useState(false);
-  const [worksFilter, setWorksFilter] = useState("FEATURED");
+const [page, setPage] = useState("home");
+const [selectedProject, setSelectedProject] = useState(null);
+const [selectedLocation, setSelectedLocation] = useState(null);
+const [worksOpen, setWorksOpen] = useState(false);
+const [worksFilter, setWorksFilter] = useState("FEATURED");
 
-  const featuredDescriptions = {
+useEffect(() => {
+if (selectedProject) {
+window.scrollTo(0, 0);
+}
+}, [selectedProject]);
+
+const featuredDescriptions = {
   "Giraffe & Birds":
     "One of my favourite photographs from the trip, capturing a giraffe in profile with three birds adding movement to the scene.",
 
@@ -28,579 +34,575 @@ function App() {
   "Elephants":
     "A family of elephants moving together through the Serengeti, capturing the quiet connection and scale of the group.",
 };
+
 const featuredTitles = [
-  "Giraffe & Birds",
-  "Ostrich",
-  "Leopard",
-  "Cheetah",
-  "Giraffe",
-  "Elephants",
+"Giraffe & Birds",
+"Ostrich",
+"Leopard",
+"Cheetah",
+"Giraffe",
+"Elephants",
 ];
 
 const featuredProjects = featuredTitles
-  .map((title) =>
-    projects.find(
-      (project) =>
-        project.title.toLowerCase() === title.toLowerCase()
-    )
-  )
-  .filter(Boolean);
+.map((title) =>
+projects.find(
+(project) =>
+project.title.toLowerCase() === title.toLowerCase()
+)
+)
+.filter(Boolean);
 
-  const locations = [...new Set(projects.map((project) => project.location))];
+const locations = [...new Set(projects.map((project) => project.location))];
 
-  const workCategories = [
-  "FEATURED",
-  "SERENGETI",
-  "MOUNTAIN",
-  "ALL",
+const workCategories = [
+"FEATURED",
+"SERENGETI",
+"MOUNTAIN",
+"ALL",
 ];
 
-  const filteredProjects =
-    worksFilter === "ALL"
-      ? projects
-      : worksFilter === "FEATURED"
-      ? featuredProjects
-      : projects.filter(
-          (project) =>
-            project.location.toUpperCase() === worksFilter
-        );
+const filteredProjects =
+worksFilter === "ALL"
+? projects
+: worksFilter === "FEATURED"
+? featuredProjects
+: projects.filter(
+(project) =>
+project.location.toUpperCase() === worksFilter
+);
 
-  const openHome = () => {
-    setPage("home");
-    setSelectedProject(null);
-    setSelectedLocation(null);
-    setWorksOpen(false);
-    setWorksFilter("FEATURED");
-  };
+const openHome = () => {
+setPage("home");
+setSelectedProject(null);
+setSelectedLocation(null);
+setWorksOpen(false);
+setWorksFilter("FEATURED");
+window.scrollTo(0, 0);
+};
 
-  const selectWorksCategory = (category) => {
-    setWorksFilter(category);
-    setWorksOpen(false);
-    setSelectedProject(null);
-    setSelectedLocation(null);
-    setPage("home");
-  };
+const selectWorksCategory = (category) => {
+setWorksFilter(category);
+setWorksOpen(false);
+setSelectedProject(null);
+setSelectedLocation(null);
+setPage("home");
+window.scrollTo(0, 0);
+};
 
-  return (
-    <div className="site">
+return ( <div className="site">
 
-      {/* NAVIGATION */}
+```
+  {/* NAVIGATION */}
 
-      <header className="navbar">
+  <header className="navbar">
 
-        <button
-          className="logo"
-          onClick={openHome}
-        >
-          ALAN NAVARRO
-        </button>
+    <button
+      className="logo"
+      onClick={openHome}
+    >
+      ALAN NAVARRO
+    </button>
 
-        <nav>
-
-          <button
-            className={worksOpen ? "nav-active" : ""}
-            onClick={() => {
-              setWorksOpen(!worksOpen);
-              setSelectedProject(null);
-              setSelectedLocation(null);
-              setPage("home");
-            }}
-          >
-            WORKS
-          </button>
-
-          <button
-            onClick={() => {
-              setWorksOpen(false);
-              setPage("about");
-              setSelectedProject(null);
-              setSelectedLocation(null);
-            }}
-          >
-            ABOUT
-          </button>
-
-          <button
-            onClick={() => {
-              setWorksOpen(false);
-              setPage("contact");
-              setSelectedProject(null);
-              setSelectedLocation(null);
-            }}
-          >
-            CONTACT
-          </button>
-
-        </nav>
-
-      </header>
-
-
-      {/* WORKS DROPDOWN */}
-
-{worksOpen && page === "home" && (
-
-  <div className="works-dropdown">
-
-    {workCategories.map((category) => (
+    <nav>
 
       <button
-        key={category}
-        className={
-          worksFilter === category
-            ? "works-category active"
-            : "works-category"
-        }
-        onClick={() => selectWorksCategory(category)}
+        className={worksOpen ? "nav-active" : ""}
+        onClick={() => {
+          setWorksOpen(!worksOpen);
+          setSelectedProject(null);
+          setSelectedLocation(null);
+          setPage("home");
+        }}
       >
-        {category}
+        WORKS
       </button>
 
-    ))}
+      <button
+        onClick={() => {
+          setWorksOpen(false);
+          setPage("about");
+          setSelectedProject(null);
+          setSelectedLocation(null);
+          window.scrollTo(0, 0);
+        }}
+      >
+        ABOUT
+      </button>
 
-  </div>
+      <button
+        onClick={() => {
+          setWorksOpen(false);
+          setPage("contact");
+          setSelectedProject(null);
+          setSelectedLocation(null);
+          window.scrollTo(0, 0);
+        }}
+      >
+        CONTACT
+      </button>
 
-)}
+    </nav>
 
+  </header>
 
-      {/* HOME */}
 
-      {page === "home" &&
-        !selectedProject &&
-        !selectedLocation && (
+  {/* WORKS DROPDOWN */}
 
-          <main>
+  {worksOpen && page === "home" && (
 
-            <section className="intro">
+    <div className="works-dropdown">
 
-              <p className="eyebrow">
-                PHOTOGRAPHER / VISUAL CREATOR
-              </p>
+      {workCategories.map((category) => (
 
-              <h1>
-                Moments,
-                <br />
-                <span className="captured">
-                  captured.
-                </span>
-              </h1>
+        <button
+          key={category}
+          className={
+            worksFilter === category
+              ? "works-category active"
+              : "works-category"
+          }
+          onClick={() => selectWorksCategory(category)}
+        >
+          {category}
+        </button>
 
-              <p className="intro-text">
-                Photography portfolio by Alan Navarro, based in Barcelona.
-              </p>
+      ))}
 
-            </section>
+    </div>
 
+  )}
 
-            {/* FEATURED / WORKS */}
 
-            <section className="featured-section">
+  {/* HOME */}
 
-              <div className="section-heading">
+  {page === "home" &&
+    !selectedProject &&
+    !selectedLocation && (
 
-                {worksFilter === "ALL"
-                  ? "ALL"
-                  : worksFilter}
+      <main>
 
-              </div>
+        <section className="intro">
 
-              <div className="featured-grid">
+          <p className="eyebrow">
+            PHOTOGRAPHER / VISUAL CREATOR
+          </p>
 
-                {filteredProjects.map((project) => (
+          <h1>
+            Moments,
+            <br />
+            <span className="captured">
+              captured.
+            </span>
+          </h1>
 
-                  <article
-                    className="photo-card"
-                    key={project.id}
-                    onClick={() => setSelectedProject(project)}
-                  >
+          <p className="intro-text">
+            Photography portfolio by Alan Navarro, based in Barcelona.
+          </p>
 
-                    <div className="image-wrapper">
+        </section>
 
-                      <img
-                        src={project.image}
-                        alt={project.title}
-                      />
 
-                      <div className="image-overlay">
-                        <span>
-                          VIEW PROJECT
-                        </span>
-                      </div>
+        {/* FEATURED / WORKS */}
 
-                    </div>
+        <section className="featured-section">
 
+          <div className="section-heading">
+            {worksFilter === "ALL"
+              ? "ALL"
+              : worksFilter}
+          </div>
 
-                    <div className="featured-info">
+          <div className="featured-grid">
 
-                      <div className="featured-title-row">
+            {filteredProjects.map((project) => (
 
-                        <h2>
-                          {project.title}
-                        </h2>
+              <article
+                className="photo-card"
+                key={project.id}
+                onClick={() => setSelectedProject(project)}
+              >
 
-                        <span className="featured-location">
-                          {project.location}
-                        </span>
+                <div className="image-wrapper">
 
-                      </div>
+                  <img
+                    src={project.image}
+                    alt={project.title}
+                  />
 
-                      {worksFilter === "FEATURED" && (
-  <p>
-    {featuredDescriptions[project.title]}
-  </p>
-)}
+                  <div className="image-overlay">
+                    <span>
+                      VIEW PROJECT
+                    </span>
+                  </div>
 
-                    </div>
+                </div>
 
-                  </article>
 
-                ))}
+                <div className="featured-info">
 
-              </div>
+                  <div className="featured-title-row">
 
-              {filteredProjects.length === 0 && (
+                    <h2>
+                      {project.title}
+                    </h2>
 
-                <p className="empty-category">
-                  No projects in this category yet.
-                </p>
+                    <span className="featured-location">
+                      {project.location}
+                    </span>
 
-              )}
+                  </div>
 
-            </section>
+                  {worksFilter === "FEATURED" && (
+                    <p>
+                      {featuredDescriptions[project.title]}
+                    </p>
+                  )}
 
-          </main>
-        )}
+                </div>
 
+              </article>
 
-      {/* LOCATION PAGE */}
+            ))}
 
-      {page === "location" &&
-        selectedLocation &&
-        !selectedProject && (
+          </div>
 
-          <main className="location-page">
+          {filteredProjects.length === 0 && (
 
-            <button
-              className="back"
-              onClick={() => {
-                setSelectedLocation(null);
-                setPage("home");
-              }}
-            >
-              ← BACK TO WORKS
-            </button>
+            <p className="empty-category">
+              No projects in this category yet.
+            </p>
 
+          )}
 
-            <section className="location-intro">
+        </section>
 
-              <p className="eyebrow">
-                PROJECT
-              </p>
+      </main>
+    )}
 
-              <h1>
 
-                {selectedLocation}
+  {/* LOCATION PAGE */}
 
-                <br />
+  {page === "location" &&
+    selectedLocation &&
+    !selectedProject && (
 
-                <span className="contrast-title">
-                  SERIES.
-                </span>
+      <main className="location-page">
 
-              </h1>
+        <button
+          className="back"
+          onClick={() => {
+            setSelectedLocation(null);
+            setPage("home");
+            window.scrollTo(0, 0);
+          }}
+        >
+          → BACK TO WORKS
+        </button>
 
-              <p className="location-story">
-                A photographic series documenting places, wildlife
-                and moments from the journey.
-              </p>
 
-            </section>
+        <section className="location-intro">
 
+          <p className="eyebrow">
+            PROJECT
+          </p>
 
-            <section className="location-gallery">
+          <h1>
+            {selectedLocation}
+            <br />
+            <span className="contrast-title">
+              SERIES.
+            </span>
+          </h1>
 
-              {projects
-                .filter(
-                  (project) =>
-                    project.location === selectedLocation
-                )
-                .map((project) => (
+          <p className="location-story">
+            A photographic series documenting places, wildlife
+            and moments from the journey.
+          </p>
 
-                  <article
-                    className="location-photo"
-                    key={project.id}
-                    onClick={() =>
-                      setSelectedProject(project)
-                    }
-                  >
+        </section>
 
-                    <div className="image-wrapper">
 
-                      <img
-                        src={project.image}
-                        alt={project.title}
-                      />
+        <section className="location-gallery">
 
-                      <div className="image-overlay">
+          {projects
+            .filter(
+              (project) =>
+                project.location === selectedLocation
+            )
+            .map((project) => (
 
-                        <span>
-                          VIEW PROJECT
-                        </span>
+              <article
+                className="location-photo"
+                key={project.id}
+                onClick={() =>
+                  setSelectedProject(project)
+                }
+              >
 
-                      </div>
+                <div className="image-wrapper">
 
-                    </div>
+                  <img
+                    src={project.image}
+                    alt={project.title}
+                  />
 
-                    <div className="photo-info">
+                  <div className="image-overlay">
 
-                      <h2>
-                        {project.title}
-                      </h2>
+                    <span>
+                      VIEW PROJECT
+                    </span>
 
-                      <p>
-                        {project.location}
-                      </p>
+                  </div>
 
-                    </div>
+                </div>
 
-                  </article>
+                <div className="photo-info">
 
-                ))}
+                  <h2>
+                    {project.title}
+                  </h2>
 
-            </section>
+                  <p>
+                    {project.location}
+                  </p>
 
-          </main>
-        )}
+                </div>
 
+              </article>
 
-      {/* INDIVIDUAL PHOTO */}
+            ))}
 
-      {selectedProject && (
+        </section>
 
-        <main className="project-page">
+      </main>
+    )}
 
-          <button
-            className="back"
-            onClick={() => setSelectedProject(null)}
-          >
-            ← BACK TO PROJECT
-          </button>
 
-          <div className="project-image">
+  {/* INDIVIDUAL PHOTO */}
+
+  {selectedProject && (
+
+    <main className="project-page">
+
+      <button
+        className="back"
+        onClick={() => setSelectedProject(null)}
+      >
+        → BACK TO PROJECT
+      </button>
+
+      <div className="project-image">
+
+        <img
+          src={selectedProject.image}
+          alt={selectedProject.title}
+        />
+
+      </div>
+
+
+      <div className="project-details">
+
+        <div>
+
+          <p className="eyebrow">
+            {selectedProject.location}
+          </p>
+
+          <h1>
+            {selectedProject.title}
+          </h1>
+
+          <p className="story">
+            {selectedProject.story}
+          </p>
+
+        </div>
+
+
+        <div className="technical">
+
+          <div>
+            <span>DATE</span>
+            <p>{selectedProject.date}</p>
+          </div>
+
+          <div>
+            <span>CAMERA</span>
+            <p>{selectedProject.camera}</p>
+          </div>
+
+          <div>
+            <span>LENS</span>
+            <p>{selectedProject.lens}</p>
+          </div>
+
+          <div>
+            <span>SETTINGS</span>
+
+            <p>
+              Aperture&nbsp;&nbsp; {selectedProject.settings?.aperture}
+              <br />
+              Shutter&nbsp;&nbsp; {selectedProject.settings?.shutter}
+              <br />
+              ISO&nbsp;&nbsp; {selectedProject.settings?.iso}
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+
+    </main>
+  )}
+
+
+  {/* ABOUT */}
+
+  {page === "about" &&
+    !selectedProject &&
+    !selectedLocation && (
+
+      <main className="simple-page">
+
+        <p className="eyebrow">
+          ABOUT
+        </p>
+
+        <h1>
+          About
+          <br />
+          <span className="contrast-title">
+            ME.
+          </span>
+        </h1>
+
+        <div className="about-content">
+
+          <div className="about-image">
 
             <img
-              src={selectedProject.image}
-              alt={selectedProject.title}
+              src="public/photos/alan.jpg"
+              alt="Alan"
             />
 
           </div>
 
+          <div className="about-text">
 
-          <div className="project-details">
+            <p>
+              I'm Alan, a photographer and visual creator based
+              in Barcelona.
+            </p>
 
-            <div>
+            <p>
+              I enjoy documenting places, people and moments
+              through photography, while also exploring editing
+              and visual work.
+            </p>
 
-              <p className="eyebrow">
-                {selectedProject.location}
-              </p>
+            <div className="equipment">
 
-              <h1>
-                {selectedProject.title}
-              </h1>
+              <div className="equipment-item">
+                <img
+                  src="/photos/equipment/a6400.jpg"
+                  alt="Sony α6400"
+                />
+                <p>Sony α6400</p>
+              </div>
 
-              <p className="story">
-                {selectedProject.story}
-              </p>
+              <div className="equipment-item">
+                <img
+                  src="/photos/equipment/lens.jpg"
+                  alt="Sony 55–210mm"
+                />
+                <p>55–210mm</p>
+              </div>
 
             </div>
 
 
-            <div className="technical">
+            <div className="socials">
 
-              <div>
-                <span>DATE</span>
-                <p>{selectedProject.date}</p>
-              </div>
+              <a
+                href="https://instagram.com/aalannavaarro"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Instagram →
+              </a>
 
-              <div>
-                <span>CAMERA</span>
-                <p>{selectedProject.camera}</p>
-              </div>
-
-              <div>
-                <span>LENS</span>
-                <p>{selectedProject.lens}</p>
-              </div>
-
-              <div>
-  <span>SETTINGS</span>
-
-  <p>
-    Aperture&nbsp;&nbsp; {selectedProject.settings?.aperture}
-    <br />
-    Shutter&nbsp;&nbsp; {selectedProject.settings?.shutter}
-    <br />
-    ISO&nbsp;&nbsp; {selectedProject.settings?.iso}
-  </p>
-</div>
+              <a href="mailto:alannavarrodiaz13@gmail.com">
+                Email →
+              </a>
 
             </div>
 
           </div>
 
-        </main>
-      )}
+        </div>
+
+      </main>
+
+    )}
 
 
-      {/* ABOUT */}
+  {/* CONTACT */}
 
-      {page === "about" &&
-        !selectedProject &&
-        !selectedLocation && (
+  {page === "contact" &&
+    !selectedProject &&
+    !selectedLocation && (
 
-          <main className="simple-page">
+      <main className="simple-page contact-page">
 
-            <p className="eyebrow">
-              ABOUT
-            </p>
+        <p className="eyebrow">
+          CONTACT
+        </p>
 
-            <h1>
-              About
-              <br />
-              <span className="contrast-title">
-                ME.
-              </span>
-            </h1>
+        <h1>
+          Let's work
+          <br />
+          <span className="contrast-title">
+            TOGETHER.
+          </span>
+        </h1>
 
-            <div className="about-content">
+        <a
+          className="email"
+          href="mailto:alannavarrodiaz13@gmail.com"
+        >
+          alannavarrodiaz13@gmail.com →
+        </a>
 
-              <div className="about-image">
+        <a
+          href="https://instagram.com/aalannavaarro"
+          target="_blank"
+          rel="noreferrer"
+          className="instagram"
+        >
+          Instagram →
+        </a>
 
-                <img
-                  src="public/photos/alan.jpg"
-                  alt="Alan"
-                />
+      </main>
 
-              </div>
+    )}
 
-<div className="about-text">
 
-  <p>
-    I'm Alan, a photographer and visual creator based
-    in Barcelona.
-  </p>
+  <footer>
 
-  <p>
-    I enjoy documenting places, people and moments
-    through photography, while also exploring editing
-    and visual work.
-  </p>
+    <span>
+      © 2026 ALAN NAVARRO
+    </span>
 
-  {/* EQUIPMENT */}
+    <span>
+      BARCELONA
+    </span>
 
-  <div className="equipment">
-
-    <div className="equipment-item">
-      <img
-        src="/photos/equipment/a6400.jpg"
-        alt="Sony α6400"
-      />
-      <p>Sony α6400</p>
-    </div>
-
-    <div className="equipment-item">
-      <img
-        src="/photos/equipment/lens.jpg"
-        alt="Sony 55–210mm"
-      />
-      <p>55–210mm</p>
-    </div>
-
-  </div>
+  </footer>
 
 </div>
-
-  
-
-
-                <div className="socials">
-
-                  <a
-                    href="https://instagram.com/aalannavaarro"
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    Instagram ↗
-                  </a>
-
-                  <a href="mailto:alannavarrodiaz13@gmail.com">
-                    Email ↗
-                  </a>
-
-                </div>
-
-              </div>
-
-          </main>
-
-        )}
-
-
-      {/* CONTACT */}
-
-      {page === "contact" &&
-        !selectedProject &&
-        !selectedLocation && (
-
-          <main className="simple-page contact-page">
-
-            <p className="eyebrow">
-              CONTACT
-            </p>
-
-            <h1>
-              Let's work
-              <br />
-              <span className="contrast-title">
-                TOGETHER.
-              </span>
-            </h1>
-
-            <a
-              className="email"
-              href="mailto:alannavarrodiaz13@gmail.com"
-            >
-              alannavarrodiaz13@gmail.com ↗
-            </a>
-
-            <a
-              href="https://instagram.com/aalannavaarro"
-              target="_blank"
-              rel="noreferrer"
-              className="instagram"
-            >
-              Instagram ↗
-            </a>
-
-          </main>
-
-        )}
-
-
-      <footer>
-
-        <span>
-          © 2026 ALAN NAVARRO
-        </span>
-
-        <span>
-          BARCELONA
-        </span>
-
-      </footer>
-
-    </div>
-  );
+);
 }
 
 export default App;
