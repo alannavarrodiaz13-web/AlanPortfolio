@@ -815,9 +815,9 @@ padding-top: 45px;
   margin: 0 0 30px;
   font-size: clamp(45px, 14vw, 80px);
   line-height: 1;
-  overflow: visible;
+  overflow: hidden;
   width: 100%;
-  padding: 5px 0;
+  padding: 5px 5px;
 }
 .story {
 font-size: 14px;
