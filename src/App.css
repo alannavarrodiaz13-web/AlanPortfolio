@@ -812,10 +812,11 @@ padding-top: 45px;
 }
 
 .project-details h1 {
-  margin-bottom: 30px;
-  font-size: clamp(50px, 15vw, 85px);
-  line-height: 1;
-  overflow: visible;
+  margin: 0 0 30px;
+  font-size: clamp(45px, 14vw, 80px);
+  line-height: 0.95;
+  overflow: hidden;
+  width: 100%;
 }
 .story {
 font-size: 14px;
