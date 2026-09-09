@@ -504,7 +504,24 @@ export const projects = [
   },
   {
     id: 30,
-    title: "Milking an elephant",
+    title: "Lake",
+    location: "Serengeti",
+    image: "/photos/hippolake.jpg",
+    date: "August 2026",
+    camera: "Sony α6400",
+    lens: "55–210mm",
+    settings: {
+  aperture: "f/5.6",
+  shutter: "1/500",
+  iso: "400"
+},
+    story:
+      "A quiet lake in the Serengeti where a group of hippopotamuses was resting nearby, hidden from view in another part of the water. Hippos spend much of the day submerged to keep their bodies cool, usually becoming more active after sunset when they leave the water to feed on grass. Their habitat is also shared with Nile crocodiles, which can often be seen resting along the same waterways. Despite their imposing appearance, hippos are highly social animals and communicate through a combination of sounds, body movements and even vibrations through the water. The empty stretch of water in this photograph gives a sense of the hidden life continuing just beyond the frame."
+
+  },
+  {
+    id: 31,
+    title: "Baby elephant nursing",
     location: "Serengeti",
     image: "/photos/elephants/cub.jpg",
     date: "August 2026",
@@ -520,7 +537,41 @@ export const projects = [
 
   },
   {
-    id: 31,
+    id: 32,
+    title: "Cub's face",
+    location: "Serengeti",
+    image: "/photos/cubface.jpg",
+    date: "August 2026",
+    camera: "Sony α6400",
+    lens: "55–210mm",
+    settings: {
+  aperture: "f/5.6",
+  shutter: "1/500",
+  iso: "400"
+},
+    story:
+      "A young cheetah feeding alongside its family after a successful hunt. Cheetah cubs are born with a long, silvery-grey mane along their backs, a distinctive feature that helps them blend into the grass and may make them resemble a honey badger, discouraging potential predators. They remain dependent on their mother for many months while learning how to hunt and survive on their own. Unlike most big cats, cheetahs are relatively vulnerable to larger predators, especially when they are young. Watching this family feed together offered a rare glimpse into the early stages of life for one of Africa's most specialised predators."
+
+  },
+  {
+    id: 33,
+    title: "Golden sunrise",
+    location: "Serengeti",
+    image: "/photos/yellowsunrise.jpg",
+    date: "August 2026",
+    camera: "Sony α6400",
+    lens: "55–210mm",
+    settings: {
+  aperture: "f/5.6",
+  shutter: "1/500",
+  iso: "400"
+},
+    story:
+     "The Serengeti beneath a warm yellow sunrise, as the first light slowly spread across the plains. The landscape changed colour within minutes, turning the grass and distant trees into soft silhouettes against the brightening sky. Early mornings in the Serengeti are often some of the quietest moments of the day, before the heat rises and wildlife becomes less active. There is something unique about watching the sun appear over such an enormous and open landscape, with nothing interrupting the horizon. This photograph captures that brief transition between darkness and daylight, when the Serengeti feels almost completely still."
+
+  },
+  {
+    id: 34,
     title: "Sunrise in the Serengeti",
     location: "Serengeti",
     image: "/photos/serengeti/sunrise.jpg",
