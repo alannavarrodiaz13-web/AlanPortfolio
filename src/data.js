@@ -452,6 +452,75 @@ export const projects = [
 
    {
     id: 27,
+    title: "Up close",
+    location: "Serengeti",
+    image: "/photos/elephants/upclose.jpg",
+    date: "August 2026",
+    camera: "Sony α6400",
+    lens: "55–210mm",
+    settings: {
+  aperture: "f/6.3",
+  shutter: "1/2500",
+  iso: "500"
+},
+    story:
+      "We stopped completely still as this elephant approached, seemingly unconcerned by our presence. Only a few metres away, it began feeding on a plant growing right beside the vehicle. For a moment, there was no need to move or make a sound — just watch. Being this close revealed details that are easily missed from a distance: the texture of its skin, the movement of its trunk and the enormous scale of its head. One of those unexpected encounters that makes a safari feel truly unforgettable."
+
+  },
+
+  {
+    id: 28,
+    title: "Safari View",
+    location: "Serengeti",
+    image: "/photos/safariview.jpg",
+    date: "August 2026",
+    camera: "Sony α6400",
+    lens: "55–210mm",
+    settings: {
+  aperture: "f/6.3",
+  shutter: "1/2000",
+  iso: "640"
+},
+    story:
+      "The vast landscape of the Serengeti stretching towards the horizon, with a safari vehicle moving quietly through the plains. The open grasslands seem almost endless, shaped by seasonal rains and the constant movement of wildlife. For much of the year, enormous herds cross these plains following water and fresh vegetation. The small silhouette of the vehicle gives a sense of scale to one of Africa's most iconic landscapes. A landscape defined by space, movement and the feeling of being completely immersed in the wild."
+
+  },
+  {
+    id: 29,
+    title: "Giraffe eating",
+    location: "Serengeti",
+    image: "/photos/giraffe/eating.jpg",
+    date: "August 2026",
+    camera: "Sony α6400",
+    lens: "55–210mm",
+    settings: {
+  aperture: "f/5.6",
+  shutter: "1/1250",
+  iso: "1000"
+},
+    story:
+      "A giraffe feeding among the acacia trees, perfectly adapted to one of the most distinctive diets in the African savanna. Giraffes mainly eat leaves, shoots and flowers, especially from acacia and other thorny trees. Their remarkable tongue can reach around 45–50 cm and is darkly pigmented, helping protect it from prolonged exposure to the sun. Their mouths and lips are remarkably tough, allowing them to strip leaves from branches covered in sharp thorns. Their long neck and specialised feeding adaptations allow them to reach vegetation far above the reach of most other herbivores."
+
+  },
+  {
+    id: 30,
+    title: "Milking an elephant",
+    location: "Serengeti",
+    image: "/photos/elephants/cub.jpg",
+    date: "August 2026",
+    camera: "Sony α6400",
+    lens: "55–210mm",
+    settings: {
+  aperture: "f/5.6",
+  shutter: "1/500",
+  iso: "400"
+},
+    story:
+      "A quiet moment within an elephant herd, where a mother stays close to her young calf as it nurses. The calf depends heavily on its mother during its first years of life, learning from her and the rest of the herd. Elephants are highly social animals, and females usually live together in family groups led by an experienced matriarch. Surrounded by the herd, this intimate moment shows a much more gentle side of these enormous animals. A brief glimpse of family life in the heart of the Serengeti."
+
+  },
+  {
+    id: 31,
     title: "Sunrise in the Serengeti",
     location: "Serengeti",
     image: "/photos/serengeti/sunrise.jpg",
@@ -466,6 +535,5 @@ export const projects = [
     story:
       "A sunrise over the Serengeti, photographed as the first light began to appear across the landscape. The sky was filled with soft lilac and purple tones mixed with deep reds and warmer colours near the horizon, creating a strong contrast with the darker landscape below. The colours changed very quickly as the sun rose, making the scene feel completely different from only a few minutes earlier. I wanted to keep the composition simple and give the sky and the landscape enough space to speak for themselves. After spending so much of the trip photographing wildlife, I also wanted to capture the atmosphere of the Serengeti itself and the feeling of beginning a new day in such a vast and quiet place."
 
-  },
-
+  }
 ];
