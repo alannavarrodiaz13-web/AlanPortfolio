@@ -466,5 +466,6 @@ export const projects = [
     story:
       "A sunrise over the Serengeti, photographed as the first light began to appear across the landscape. The sky was filled with soft lilac and purple tones mixed with deep reds and warmer colours near the horizon, creating a strong contrast with the darker landscape below. The colours changed very quickly as the sun rose, making the scene feel completely different from only a few minutes earlier. I wanted to keep the composition simple and give the sky and the landscape enough space to speak for themselves. After spending so much of the trip photographing wildlife, I also wanted to capture the atmosphere of the Serengeti itself and the feeling of beginning a new day in such a vast and quiet place."
 
-  }
+  },
+
 ];

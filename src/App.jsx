@@ -411,7 +411,7 @@ return ( <div className="site">
   target="_blank"
   rel="noreferrer"
 >
-  BUY THIS PHOTO →
+  SEE MORE OR BUY →
 </a>
 
       <div className="project-details">
