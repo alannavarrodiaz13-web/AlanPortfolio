@@ -705,5 +705,5 @@ export const projects = [
     story:
      "The Serengeti beneath a warm yellow sunrise, as the first light slowly spread across the plains. The landscape changed colour within minutes, turning the grass and distant trees into soft silhouettes against the brightening sky. Early mornings in the Serengeti are often some of the quietest moments of the day, before the heat rises and wildlife becomes less active. There is something unique about watching the sun appear over such an enormous and open landscape, with nothing interrupting the horizon. This photograph captures that brief transition between darkness and daylight, when the Serengeti feels almost completely still."
 
-  },
+  }
 ];
