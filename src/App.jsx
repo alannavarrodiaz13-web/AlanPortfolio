@@ -58,8 +58,8 @@ const locations = [...new Set(projects.map((project) => project.location))];
 const workCategories = [
 "FEATURED",
 "SERENGETI",
-"ANIMALS OF SPAIN",
 "VIEWS",
+"BEINGS",
 "ALL",
 ];
 

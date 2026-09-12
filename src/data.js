@@ -676,7 +676,7 @@ export const projects = [
     id: 40,
     title: "A lot",
     location: "Views",
-    image: "/photos/mntn.jpg",
+    image: "/photos/mntnyy.jpg",
     date: "September 2026",
     camera: "Sony α6400",
     lens: "55–210mm",
